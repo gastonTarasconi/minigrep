@@ -8,12 +8,12 @@ fn main() {
     let ignore_case = env::var("IGNORE_CASE").is_ok();
 
     let config = Config::build(&args, ignore_case).unwrap_or_else(|err| {
-        println!("Problem parsing arguments: {err}");
+        eprintln!("Problem parsing arguments: {err}");
         process::exit(1);
     });
 
     if let Err(e) = minigrep::run(config) {
-        println!("Application error: {e}");
+        eprintln!("Application error: {e}");
         process::exit(1);
     }
 }
