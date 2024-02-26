@@ -35,7 +35,7 @@ impl Config {
 
         let file_path = match args.next() {
             Some(arg) => arg,
-            None => return Err("Didn't get a query string"),
+            None => return Err("Didn't get a file_path"),
         };
 
         Ok(Config { query, file_path, ignore_case })
